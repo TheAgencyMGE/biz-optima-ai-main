@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BizOptima AI - Professional Business Intelligence Design System */
+
+@layer base {
+  :root {
+    /* Corporate Color Palette */
+    --background: 240 10% 98%;
+    --foreground: 224 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 15% 15%;
+
+    /* Professional Business Primary - Deep Corporate Blue */
+    --primary: 218 89% 51%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 218 89% 45%;
+    --primary-active: 218 89% 40%;
+
+    /* Executive Secondary - Sophisticated Navy */
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 215 28% 22%;
+
+    /* Professional Accents */
+    --accent: 210 100% 97%;
+    --accent-foreground: 218 89% 51%;
+    --accent-hover: 210 100% 94%;
+
+    /* Business Analytics Colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Data Visualization Palette */
+    --chart-primary: 218 89% 51%;
+    --chart-secondary: 142 71% 45%;
+    --chart-tertiary: 45 93% 47%;
+    --chart-quaternary: 262 83% 58%;
+    --chart-quinary: 355 78% 60%;
+
+    /* Professional UI Elements */
+    --muted: 215 20% 93%;
+    --muted-foreground: 215 16% 47%;
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 218 89% 51%;
+
+    /* Executive Dashboard Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(218 89% 51%), hsl(218 89% 40%));
+    --gradient-secondary: linear-gradient(135deg, hsl(215 28% 17%), hsl(215 28% 12%));
+    --gradient-accent: linear-gradient(135deg, hsl(210 100% 97%), hsl(210 100% 92%));
+    --gradient-analytics: linear-gradient(135deg, hsl(218 89% 51%), hsl(142 71% 45%));
+
+    /* Professional Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(215 20% 65% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(215 20% 65% / 0.1), 0 2px 4px -1px hsl(215 20% 65% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(215 20% 65% / 0.1), 0 4px 6px -2px hsl(215 20% 65% / 0.05);
+    --shadow-executive: 0 20px 25px -5px hsl(215 20% 65% / 0.15), 0 10px 10px -5px hsl(215 20% 65% / 0.04);
+
+    /* Business Interface Spacing */
+    --radius: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Executive Dark Mode - Professional Night Theme */
+    --background: 215 28% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 28% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 28% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 218 89% 51%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 218 89% 55%;
+
+    --secondary: 215 28% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-hover: 215 28% 20%;
+
+    --accent: 215 28% 12%;
+    --accent-foreground: 218 89% 51%;
+    --accent-hover: 215 28% 15%;
+
+    --success: 142 71% 45%;
+    --warning: 45 93% 47%;
+    --destructive: 0 84% 60%;
+
+    --muted: 215 28% 15%;
+    --muted-foreground: 215 20% 65%;
+    --border: 215 28% 18%;
+    --input: 215 28% 18%;
+    --ring: 218 89% 51%;
+
+    /* Dark Mode Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(218 89% 51%), hsl(218 89% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(215 28% 15%), hsl(215 28% 10%));
+    --gradient-accent: linear-gradient(135deg, hsl(215 28% 12%), hsl(215 28% 8%));
+    --gradient-analytics: linear-gradient(135deg, hsl(218 89% 51%), hsl(142 71% 45%));
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Professional Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-foreground;
+    letter-spacing: -0.025em;
+  }
+
+  /* Business Data Tables */
+  .data-table {
+    @apply border-collapse w-full;
+  }
+  
+  .data-table th {
+    @apply bg-muted text-muted-foreground font-medium text-sm px-4 py-3 text-left;
+  }
+  
+  .data-table td {
+    @apply px-4 py-3 border-b border-border text-sm;
+  }
+
+  /* Executive Dashboard Cards */
+  .executive-card {
+    @apply bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition-all duration-200;
+  }
+
+  .metric-card {
+    @apply p-6 bg-gradient-to-br from-card to-accent/5 border border-border rounded-lg shadow-sm hover:shadow-md transition-all duration-200;
+  }
+
+  /* Professional Animations */
+  .fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Loading Animations */
+  .pulse-business {
+    animation: pulseBusiness 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulseBusiness {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  /* Chart Styling */
+  .recharts-wrapper {
+    @apply font-sans;
+  }
+
+  .recharts-text {
+    @apply fill-muted-foreground text-xs;
+  }
+
+  .recharts-cartesian-axis-line,
+  .recharts-cartesian-axis-tick-line {
+    @apply stroke-border;
+  }
+
+  .recharts-cartesian-grid-horizontal line,
+  .recharts-cartesian-grid-vertical line {
+    @apply stroke-border opacity-30;
+  }
+}
