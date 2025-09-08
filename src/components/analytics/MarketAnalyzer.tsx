@@ -70,6 +70,15 @@ export const MarketAnalyzer: React.FC = () => {
     return 'Enterprise (1000+ employees)';
   };
 
+  const safeGrowthRate = (rate: any): number => {
+    if (typeof rate === 'number' && !isNaN(rate)) return rate;
+    if (typeof rate === 'string') {
+      const parsed = parseFloat(rate);
+      return !isNaN(parsed) ? parsed : 0;
+    }
+    return 0;
+  };
+
   const industryTemplates = [
     { name: 'Technology/SaaS', target: 'Small to Medium Businesses', size: 'Startup (1-50 employees)' },
     { name: 'E-commerce/Retail', target: 'Online Consumers', size: 'Small Business (51-200 employees)' },
@@ -301,7 +310,7 @@ export const MarketAnalyzer: React.FC = () => {
                   <TrendingUp className="h-8 w-8 text-success" />
                   <div>
                     <p className="text-sm text-muted-foreground">Growth Rate</p>
-                    <h3 className="text-xl font-bold">{analysis.growthRate.toFixed(1)}%</h3>
+                    <h3 className="text-xl font-bold">{safeGrowthRate(analysis.growthRate).toFixed(1)}%</h3>
                   </div>
                 </div>
               </CardContent>

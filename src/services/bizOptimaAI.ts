@@ -173,7 +173,16 @@ IMPORTANT: Return ONLY valid JSON without any markdown formatting, code blocks, 
       const result = await this.model.generateContent(prompt);
       const responseText = result.response.text();
       const cleanedResponse = this.extractJsonFromResponse(responseText);
-      return JSON.parse(cleanedResponse);
+      const parsedResult = JSON.parse(cleanedResponse);
+      
+      // Ensure growthRate is a number
+      if (parsedResult.growthRate !== undefined) {
+        parsedResult.growthRate = typeof parsedResult.growthRate === 'number' 
+          ? parsedResult.growthRate 
+          : parseFloat(parsedResult.growthRate) || 0;
+      }
+      
+      return parsedResult;
     } catch (error) {
       console.error('Market analysis error:', error);
       return this.getDefaultMarketAnalysis();
